@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRC = main.c num_list.c
+SRC = main.c num_list.c check.c
 
 SRC_DIR = ./Src/
 

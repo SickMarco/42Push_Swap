@@ -1,30 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/07 18:40:51 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/10 21:28:00 by mbozzi           ###   ########.fr       */
+/*   Created: 2023/01/10 18:30:34 by mbozzi            #+#    #+#             */
+/*   Updated: 2023/01/10 21:27:22 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	main(int ac, char **av)
+int	check_args(char **av)
 {
-	t_stack *stack_a;
-	
-	if (ac > 2 && check_args(av) == 0)
+	int		x;
+	int		y;
+
+	x = 1;
+	while (av[x])
 	{
-		stack_a = malloc(sizeof(t_stack));
-		stack_a->num = ft_atoi(av[--ac]);
-		stack_a->next = NULL;
-		while(--ac > 0)
-			ft_lstadd_frontnum(&stack_a, ft_lstnewnum(ft_atoi(av[ac])));
-		//check_list(stack_a);
+		y = 0;
+		if (av[x][0] == '-')
+			y++;
+		while (av[x][y])
+		{
+			if ((av[x][y] >= '0' && av[x][y] <= '9'))
+				y++;
+			else
+			{
+				ft_printf("Wrong Arguments\n");
+				return (1);
+			}
+		}
+		x++;
 	}
-	else
-		return (0);
+	return (0);
 }
+
+/*int	check_list(t_stack *stack)
+{
+	
+}*/

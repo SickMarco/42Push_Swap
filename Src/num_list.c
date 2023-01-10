@@ -6,71 +6,51 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 12:34:22 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/10 12:48:19 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/10 18:29:43 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_Swap.h"
+#include "../push_swap.h"
 
-t_stack	*ft_lstnewnum(int num, char stack)
+t_stack	*ft_lstlastnum(t_stack *lst)
+{
+	while (lst)
+	{
+		if (!lst->next)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
+}
+
+
+t_stack	*ft_lstnewnum(int num)
 {
 	t_stack	*new;
 
-	if (stack == 'a')
-	{
-		new = malloc(sizeof(*new));
-		if (!new)
-			return (NULL);
-		new->sa.num = num;
-		new->sa.next = NULL;
-	}
-	else if (stack == 'b')
-	{
-		new = malloc(sizeof(*new));
-		if (!new)
-			return (NULL);
-		new->sb.num = num;
-		new->sb.next = NULL;
-	}
+	new = malloc(sizeof(*new));
+	if (!new)
+		return (NULL);
+	new->num = num;
+	new->next = NULL;
 	return (new);
 }
 
-void	ft_lstadd_backnum(t_stack **lst, t_stack *new, char stack)
+void	ft_lstadd_backnum(t_stack **lst, t_stack *new)
 {
 	t_stack	*last;
 
-	if (stack == 'a')
+	if (*lst)
 	{
-		if (*lst)
-		{
-			last = ft_lstlast(*lst);
-			last->sa.next = new;
-		}
-		else
-			*lst = new;
+		last = ft_lstlastnum(*lst);
+		last->next = new;
 	}
-	else if (stack == 'b')
-	{
-		if (*lst)
-		{
-			last = ft_lstlast(*lst);
-			last->sb.next = new;
-		}
-		else
-			*lst = new;
-	}
+	else
+		*lst = new;
 }
 
-void	ft_lstadd_frontnum(t_stack **lst, t_stack *new, char stack)
+void	ft_lstadd_frontnum(t_stack **lst, t_stack *new)
 {
-	if (stack == 'a')
-	{
-		new->sa.next = *lst;
-		*lst = new;
-	}
-	else if (stack == 'b')
-	{
-		new->sb.next = *lst;
-		*lst = new;
-	}
+	new->next = *lst;
+	*lst = new;
 }

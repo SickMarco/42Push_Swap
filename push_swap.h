@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Push_Swap.h                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:40:58 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/10 12:49:00 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/10 21:25:31 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "./MyLib/mylib.h"
-
-typedef struct s_stack_a {
-	int					num;
-	struct s_stack_a	*next;
-}				t_stack_a;
-
-typedef struct s_stack_b {
-	int					num;
-	struct s_stack_b	*next;
-}				t_stack_b;
+# include "./Src/MyLib/mylib.h"
 
 typedef struct s_stack {
-	t_stack_a	sa;
-	t_stack_b	sb;
+	int					num;
+	struct s_stack		*next;
 }				t_stack;
 
-t_stack		*ft_lstnewnum(int num, char stack);
-void		ft_lstadd_backnum(t_stack **lst, t_stack *new, char stack);
-void		ft_lstadd_frontnum(t_stack **lst, t_stack *new, char stack);
+t_stack		*ft_lstnewnum(int num);
+void		ft_lstadd_backnum(t_stack **lst, t_stack *new);
+void		ft_lstadd_frontnum(t_stack **lst, t_stack *new);
+int			check_args(char **av);
+int			check_list(t_stack *stack);
 
 #endif
