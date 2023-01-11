@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 17:18:32 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/07 18:18:24 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/11 14:05:55 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ int				ft_putnbr_base(unsigned int nbr, char *base);
 char			*get_next_line(int fd);
 char			*ft_strjoin2(char *s1, char *s2);
 int				ft_check_eol(char *buff);
+long int		ft_atoi_long(const char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 12:34:22 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/10 18:29:43 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/11 18:44:34 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,3 +54,17 @@ void	ft_lstadd_frontnum(t_stack **lst, t_stack *new)
 	new->next = *lst;
 	*lst = new;
 }
+
+t_stack	*ft_copy_list(t_stack *stack)
+{
+	t_stack	*copy;
+
+	copy = ft_lstnewnum (stack->num);
+	while (stack->next != NULL)
+	{
+		stack = stack->next;
+		ft_lstadd_backnum(&copy, ft_lstnewnum(stack->num));
+	}
+	return (copy);
+}
+
