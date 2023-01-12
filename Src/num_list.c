@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 12:34:22 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/11 18:44:34 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/12 18:24:43 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ t_stack	*ft_lstlastnum(t_stack *lst)
 	}
 	return (lst);
 }
-
 
 t_stack	*ft_lstnewnum(int num)
 {
@@ -44,6 +43,7 @@ void	ft_lstadd_backnum(t_stack **lst, t_stack *new)
 	{
 		last = ft_lstlastnum(*lst);
 		last->next = new;
+		new->next = NULL;
 	}
 	else
 		*lst = new;
@@ -67,4 +67,3 @@ t_stack	*ft_copy_list(t_stack *stack)
 	}
 	return (copy);
 }
-
