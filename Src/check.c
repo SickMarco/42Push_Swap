@@ -6,11 +6,24 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:30:34 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/13 16:50:30 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/13 17:40:02 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+t_stack	*ft_copy_list(t_stack *stack)
+{
+	t_stack	*copy;
+
+	copy = ft_lstnewnum (stack->num);
+	while (stack->next != NULL)
+	{
+		stack = stack->next;
+		ft_lstadd_backnum(&copy, ft_lstnewnum(stack->num));
+	}
+	return (copy);
+}
 
 int	check_limits(char **av, int x)
 {

@@ -6,24 +6,11 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:40:51 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/13 17:04:02 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/13 17:47:26 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	free_list(t_stack **lst)
-{
-	t_stack	*temp;
-
-	while (*lst)
-	{
-		temp = (*lst)->next;
-		free(*lst);
-		*lst = temp;
-	}
-	*lst = NULL;
-}
 
 int	main(int ac, char **av)
 {
@@ -44,7 +31,7 @@ int	main(int ac, char **av)
 			free_list(&stack_a);
 			return (1);
 		}
-		start_sorting(&stack_a, &stack_b);
+		start_sorting(&stack_a, &stack_b, ac - 1);
 		free_list(&stack_a);
 		free_list(&stack_b);
 	}
