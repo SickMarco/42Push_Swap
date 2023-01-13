@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:30:34 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/12 18:44:33 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/13 16:50:30 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	check_limits(char **av, int x)
 	return (1);
 }
 
-
 int	check_args(char **av)
 {
 	int			x;
@@ -47,7 +46,7 @@ int	check_args(char **av)
 				y++;
 			else
 			{
-				ft_printf("\033[0;31mError\nSome arguments aren’t integers\n");
+				ft_printf("\033[0;31mError\n");
 				ft_printf("Some arguments aren’t integers\n\033[0;37m");
 				return (1);
 			}
@@ -74,13 +73,13 @@ int	check_list(t_stack *stack)
 				counter ++;
 			if (counter > 1)
 			{
-				free_list(chead);
+				free_list(&chead);
 				return (1);
 			}
 			copy = copy->next;
 		}
 		stack = stack->next;
 	}
-	free_list(chead);
+	free_list(&chead);
 	return (0);
 }

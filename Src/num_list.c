@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 12:34:22 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/12 18:24:43 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/13 16:48:40 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_stack	*ft_lstnewnum(int num)
 {
 	t_stack	*new;
 
-	new = malloc(sizeof(*new));
+	new = malloc(sizeof(t_stack));
 	if (!new)
 		return (NULL);
 	new->num = num;

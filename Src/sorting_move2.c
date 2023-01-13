@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:06:11 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/12 19:52:36 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/13 17:00:54 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ra(t_stack **stack_a)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = (*stack_a)->next;
 	ft_lstadd_backnum(stack_a, (*stack_a));
@@ -24,7 +24,7 @@ void	ra(t_stack **stack_a)
 
 void	rb(t_stack **stack_b)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = (*stack_b)->next;
 	ft_lstadd_backnum(stack_b, (*stack_b));
@@ -40,7 +40,7 @@ void	rr(t_stack **stack_a, t_stack **stack_b)
 
 void	rra(t_stack **stack_a)
 {
-	t_stack *head;
+	t_stack	*head;
 	t_stack	*last;
 
 	head = (*stack_a);
@@ -55,7 +55,7 @@ void	rra(t_stack **stack_a)
 
 void	rrb(t_stack **stack_b)
 {
-	t_stack *head;
+	t_stack	*head;
 	t_stack	*last;
 
 	head = (*stack_b);
@@ -67,5 +67,3 @@ void	rrb(t_stack **stack_b)
 	(*stack_b) = last;
 	ft_printf("rrb\n");
 }
-
-
