@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:40:58 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/13 17:15:47 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/14 19:03:28 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ void		rb(t_stack **stack_b);
 void		rr(t_stack **stack_a, t_stack **stack_b);
 void		rra(t_stack **stack_a);
 void		rrb(t_stack **stack_b);
-void		minisort3(t_stack **stack_a, t_stack **stack_b);
+void		rrr(t_stack **stack_a, t_stack **stack_b);
+void		minisort3(t_stack **stack_a);
+void		minisort5(t_stack **stack_a, t_stack **stack_b);
+void		endsort5(t_stack **stack_a, t_stack **stack_n);
 
 #endif

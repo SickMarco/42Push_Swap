@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 18:53:16 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/13 18:13:02 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/14 19:03:25 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,22 @@ void	ft_printlist(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
+void	rrr(t_stack **stack_a, t_stack **stack_b)
+{
+	rra(stack_a);
+	rrb(stack_b);
+}
+
 void	start_sorting(t_stack **stack_a, t_stack **stack_b, int ac)
 {
+	if (ac == 2)
+	{
+		if ((*stack_a)->num > (*stack_a)->next->num)
+			sa(stack_a);
+	}
 	if (ac == 3)
-		minisort3(stack_a, stack_b);
-	ft_printlist(*stack_a, *stack_b);
+		minisort3(stack_a);
+	if (ac == 5)
+		minisort5(stack_a, stack_b);
+	//ft_printlist(*stack_a, *stack_b);
 }
