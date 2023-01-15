@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 19:20:51 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/12 18:50:30 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/15 16:40:35 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	sa(t_stack **stack_a)
 {
-	t_stack	*head;
 	t_stack	*tmp1;
 	t_stack	*tmp2;
 
 	if ((*stack_a) && (*stack_a)->next != NULL)
 	{
 		tmp1 = (*stack_a);
-		head = (*stack_a)->next;
 		(*stack_a) = (*stack_a)->next;
 		tmp2 = (*stack_a)->next;
 		(*stack_a)->next = tmp1;
@@ -32,14 +30,12 @@ void	sa(t_stack **stack_a)
 
 void	sb(t_stack **stack_b)
 {
-	t_stack	*head;
 	t_stack	*tmp1;
 	t_stack	*tmp2;
 
 	if ((*stack_b) && (*stack_b)->next != NULL)
 	{
 		tmp1 = (*stack_b);
-		head = (*stack_b)->next;
 		(*stack_b) = (*stack_b)->next;
 		tmp2 = (*stack_b)->next;
 		(*stack_b)->next = tmp1;
