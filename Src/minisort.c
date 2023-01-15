@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 17:11:44 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/14 19:45:58 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/15 17:44:52 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,15 @@ void	minisort3(t_stack **stack_a)
 
 void	endsort5(t_stack **stack_a, t_stack **stack_b, t_sort sort)
 {
-	while (*stack_a != sort.max)
+	while (*stack_a != sort.max && *stack_a != sort.min)
 		ra(stack_a);
 	pb(stack_a, stack_b);
-	while (*stack_a != sort.min)
+	while (*stack_a != sort.min && *stack_a != sort.max)
 		ra(stack_a);
 	pb(stack_a, stack_b);
 	minisort3(stack_a);
+	if (*stack_b == sort.max)
+		sb(stack_b);
 	pa(stack_a, stack_b);
 	pa(stack_a, stack_b);
 	ra(stack_a);
@@ -57,7 +59,9 @@ void	minisort5(t_stack **stack_a, t_stack **stack_b)
 		(*stack_a) = (*stack_a)->next;
 	}
 	(*stack_a) = head;
-	if (sort.max->next == NULL)
+	if (sort.max->next == NULL || sort.min->next == NULL)
+		rra(stack_a);
+	if (sort.max->next == NULL || sort.min->next == NULL)
 		rra(stack_a);
 	if ((*stack_a) == sort.min && sort.min->next == sort.max)
 		sa(stack_a);
