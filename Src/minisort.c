@@ -6,11 +6,31 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 17:11:44 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/15 17:44:52 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/16 18:07:51 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+t_sort	find_minmax(t_stack **stack_a)
+{
+	t_sort	sort;
+	t_stack	*head;
+
+	head = (*stack_a);
+	sort.max = (*stack_a);
+	sort.min = (*stack_a);
+	while (*stack_a)
+	{
+		if ((*stack_a)->num > sort.max->num)
+			sort.max = (*stack_a);
+		else if ((*stack_a)->num < sort.min->num)
+			sort.min = (*stack_a);
+		(*stack_a) = (*stack_a)->next;
+	}
+	(*stack_a) = head;
+	return (sort);
+}
 
 void	minisort3(t_stack **stack_a)
 {
@@ -26,8 +46,17 @@ void	minisort3(t_stack **stack_a)
 		sa(stack_a);
 }
 
-void	endsort5(t_stack **stack_a, t_stack **stack_b, t_sort sort)
+void	minisort5(t_stack **stack_a, t_stack **stack_b)
 {
+	t_sort	sort;
+
+	sort = find_minmax(stack_a);
+	if (sort.max->next == NULL || sort.min->next == NULL)
+		rra(stack_a);
+	if (sort.max->next == NULL || sort.min->next == NULL)
+		rra(stack_a);
+	if ((*stack_a) == sort.min && sort.min->next == sort.max)
+		sa(stack_a);
 	while (*stack_a != sort.max && *stack_a != sort.min)
 		ra(stack_a);
 	pb(stack_a, stack_b);
@@ -40,30 +69,4 @@ void	endsort5(t_stack **stack_a, t_stack **stack_b, t_sort sort)
 	pa(stack_a, stack_b);
 	pa(stack_a, stack_b);
 	ra(stack_a);
-}
-
-void	minisort5(t_stack **stack_a, t_stack **stack_b)
-{
-	t_stack	*head;
-	t_sort	sort;
-
-	head = (*stack_a);
-	sort.max = (*stack_a);
-	sort.min = (*stack_a);
-	while (*stack_a)
-	{
-		if ((*stack_a)->num > sort.max->num)
-			sort.max = (*stack_a);
-		else if ((*stack_a)->num < sort.min->num)
-			sort.min = (*stack_a);
-		(*stack_a) = (*stack_a)->next;
-	}
-	(*stack_a) = head;
-	if (sort.max->next == NULL || sort.min->next == NULL)
-		rra(stack_a);
-	if (sort.max->next == NULL || sort.min->next == NULL)
-		rra(stack_a);
-	if ((*stack_a) == sort.min && sort.min->next == sort.max)
-		sa(stack_a);
-	endsort5(stack_a, stack_b, sort);
 }

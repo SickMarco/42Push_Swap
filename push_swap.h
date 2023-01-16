@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:40:58 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/14 19:41:08 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/16 18:09:22 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ typedef struct s_stack {
 }				t_stack;
 
 typedef struct s_sort {
-	t_stack					*max;
-	t_stack					*min;
+	t_stack				*max;
+	t_stack				*min;
 }				t_sort;
 
 t_stack		*ft_lstnewnum(int num);
@@ -46,8 +46,9 @@ void		rr(t_stack **stack_a, t_stack **stack_b);
 void		rra(t_stack **stack_a);
 void		rrb(t_stack **stack_b);
 void		rrr(t_stack **stack_a, t_stack **stack_b);
+t_sort		find_minmax(t_stack **stack_a);
 void		minisort3(t_stack **stack_a);
 void		minisort5(t_stack **stack_a, t_stack **stack_b);
-void		endsort5(t_stack **stack_a, t_stack **stack_n, t_sort sort);
+void		bigsort(t_stack **stack_a, t_stack **stack_b, int ac);
 
 #endif
