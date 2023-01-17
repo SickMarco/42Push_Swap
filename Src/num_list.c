@@ -6,24 +6,11 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 12:34:22 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/13 17:10:50 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/17 17:09:54 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	free_list(t_stack **lst)
-{
-	t_stack	*temp;
-
-	while (*lst)
-	{
-		temp = (*lst)->next;
-		free(*lst);
-		*lst = temp;
-	}
-	*lst = NULL;
-}
 
 t_stack	*ft_lstlastnum(t_stack *lst)
 {
@@ -66,4 +53,17 @@ void	ft_lstadd_frontnum(t_stack **lst, t_stack *new)
 {
 	new->next = *lst;
 	*lst = new;
+}
+
+int	ft_lstsizenum(t_stack *lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

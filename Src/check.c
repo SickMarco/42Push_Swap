@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:30:34 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/13 17:40:02 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/17 18:06:20 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	check_limits(char **av, int x)
 		return (0);
 	else
 	{
-		ft_printf("\033[0;31mError\nSome arguments are bigger than an integer\n");
+		ft_printf("\033[0;31mError\n");
 		ft_printf("Some arguments are bigger than an integer\n\033[0;37m");
 	}
 	return (1);
