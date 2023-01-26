@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:40:58 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/17 17:10:13 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/26 17:07:49 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,16 @@ typedef struct s_sort {
 	t_stack				*max;
 	t_stack				*min;
 }				t_sort;
+
+typedef struct s_lis {
+	int					len;
+	int					fst;
+	int					lst;
+	int					tmp;
+	int					start;
+	int					end;
+	int					flag;
+}				t_lis;
 
 t_stack		*ft_lstnewnum(int num);
 void		ft_lstadd_backnum(t_stack **lst, t_stack *new);
@@ -52,5 +62,6 @@ void		minisort3(t_stack **stack_a);
 void		minisort4(t_stack **stack_a, t_stack **stack_b);
 void		minisort5(t_stack **stack_a, t_stack **stack_b);
 void		bigsort(t_stack **stack_a, t_stack **stack_b);
+int			ft_sorted(t_stack **stack_a);
 
 #endif
