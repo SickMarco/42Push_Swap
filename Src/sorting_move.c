@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 19:20:51 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/15 16:40:35 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/29 17:40:34 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	sa(t_stack **stack_a)
 		tmp2 = (*stack_a)->next;
 		(*stack_a)->next = tmp1;
 		tmp1->next = tmp2;
-		ft_printf("sa\n");
+		ft_printer("sa");
 	}
 }
 
@@ -40,14 +40,16 @@ void	sb(t_stack **stack_b)
 		tmp2 = (*stack_b)->next;
 		(*stack_b)->next = tmp1;
 		tmp1->next = tmp2;
-		ft_printf("sb\n");
+		ft_printer("sb");
 	}
 }
 
 void	ss(t_stack **stack_a, t_stack **stack_b)
 {
+	ft_printer("ss");
 	sa(stack_a);
 	sb(stack_b);
+	ft_printer("OFF");
 }
 
 void	pb(t_stack **stack_a, t_stack **stack_b)
@@ -68,7 +70,7 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 			ft_lstadd_frontnum(stack_b, (*stack_a));
 			(*stack_a) = tmp;
 		}
-		ft_printf("pb\n");
+		ft_printer("pb");
 	}
 }
 
@@ -90,6 +92,6 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 			ft_lstadd_frontnum(stack_a, (*stack_b));
 			(*stack_b) = tmp;
 		}
-		ft_printf("pa\n");
+		ft_printer("pa");
 	}
 }

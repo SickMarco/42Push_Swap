@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:06:11 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/13 17:00:54 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/29 17:22:18 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ra(t_stack **stack_a)
 	tmp = (*stack_a)->next;
 	ft_lstadd_backnum(stack_a, (*stack_a));
 	(*stack_a) = tmp;
-	ft_printf("ra\n");
+	ft_printer("ra");
 }
 
 void	rb(t_stack **stack_b)
@@ -29,13 +29,15 @@ void	rb(t_stack **stack_b)
 	tmp = (*stack_b)->next;
 	ft_lstadd_backnum(stack_b, (*stack_b));
 	(*stack_b) = tmp;
-	ft_printf("rb\n");
+	ft_printer("rb");
 }
 
 void	rr(t_stack **stack_a, t_stack **stack_b)
 {
+	ft_printer("rr");
 	ra(stack_a);
 	rb(stack_b);
+	ft_printer("OFF");
 }
 
 void	rra(t_stack **stack_a)
@@ -50,7 +52,7 @@ void	rra(t_stack **stack_a)
 	(*stack_a)->next = NULL;
 	last->next = head;
 	(*stack_a) = last;
-	ft_printf("rra\n");
+	ft_printer("rra");
 }
 
 void	rrb(t_stack **stack_b)
@@ -65,5 +67,5 @@ void	rrb(t_stack **stack_b)
 	(*stack_b)->next = NULL;
 	last->next = head;
 	(*stack_b) = last;
-	ft_printf("rrb\n");
+	ft_printer("rrb");
 }

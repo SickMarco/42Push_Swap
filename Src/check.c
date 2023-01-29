@@ -6,11 +6,34 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:30:34 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/17 18:06:20 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/29 16:52:42 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int	ft_sorted(t_stack **stack_a)
+{
+	t_stack	*copy;
+	t_stack	*head;
+
+	copy = ft_copy_list(*stack_a);
+	head = copy;
+	while (copy)
+	{
+		if (copy->next == NULL)
+			break ;
+		if (copy->num < copy->next->num)
+			copy = copy->next;
+		else
+		{
+			free_list(&head);
+			return (0);
+		}
+	}
+	free_list(&head);
+	return (1);
+}
 
 t_stack	*ft_copy_list(t_stack *stack)
 {

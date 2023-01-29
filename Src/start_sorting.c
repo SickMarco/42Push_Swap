@@ -6,34 +6,11 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 18:53:16 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/25 18:09:46 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/01/29 18:04:09 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-int	ft_sorted(t_stack **stack_a)
-{
-	t_stack	*copy;
-	t_stack	*head;
-
-	copy = ft_copy_list(*stack_a);
-	head = copy;
-	while (copy)
-	{
-		if (copy->next == NULL)
-			break ;
-		if (copy->num < copy->next->num)
-			copy = copy->next;
-		else
-		{
-			free_list(&head);
-			return (0);
-		}
-	}
-	free_list(&head);
-	return (1);
-}
 
 void	ft_printlist(t_stack *stack_a, t_stack *stack_b)
 {
@@ -49,12 +26,6 @@ void	ft_printlist(t_stack *stack_a, t_stack *stack_b)
 		ft_printf("%d ", stack_b->num);
 		stack_b = stack_b->next;
 	}
-}
-
-void	rrr(t_stack **stack_a, t_stack **stack_b)
-{
-	rra(stack_a);
-	rrb(stack_b);
 }
 
 void	start_sorting(t_stack **stack_a, t_stack **stack_b, int ac)
