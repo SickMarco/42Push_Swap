@@ -6,23 +6,30 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:40:51 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/17 16:27:39 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/02 17:25:48 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	free_list(t_stack **lst)
+void	start_sorting(t_stack **stack_a, t_stack **stack_b, int ac)
 {
-	t_stack	*temp;
-
-	while (*lst)
+	if (ft_sorted(stack_a) == 1)
+		return ;
+	if (ac == 2)
 	{
-		temp = (*lst)->next;
-		free(*lst);
-		*lst = temp;
+		if ((*stack_a)->num > (*stack_a)->next->num)
+			sa(stack_a);
 	}
-	*lst = NULL;
+	else if (ac == 3)
+		minisort3(stack_a);
+	else if (ac == 4)
+		minisort4(stack_a, stack_b);
+	else if (ac == 5)
+		minisort5(stack_a, stack_b);
+	else
+		bigsort(stack_a, stack_b);
+	ft_printlist(*stack_a, *stack_b);
 }
 
 int	main(int ac, char **av)

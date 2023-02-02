@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:30:34 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/29 16:52:42 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/02 17:28:49 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,6 @@ int	ft_sorted(t_stack **stack_a)
 	}
 	free_list(&head);
 	return (1);
-}
-
-t_stack	*ft_copy_list(t_stack *stack)
-{
-	t_stack	*copy;
-
-	copy = ft_lstnewnum (stack->num);
-	while (stack->next != NULL)
-	{
-		stack = stack->next;
-		ft_lstadd_backnum(&copy, ft_lstnewnum(stack->num));
-	}
-	return (copy);
 }
 
 int	check_limits(char **av, int x)

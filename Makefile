@@ -1,6 +1,7 @@
 NAME = push_swap
 
-SRC = main.c list_utils.c check.c start_sorting.c sorting_move.c sorting_move2.c sorting_move3.c minisort.c bigsort.c
+SRC = main.c list_utils.c check.c sorting_move.c sorting_move2.c sorting_utils.c minisort.c bigsort.c \
+      lis.c
 
 SRC_DIR = ./Src/
 
