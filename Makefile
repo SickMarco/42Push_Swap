@@ -9,7 +9,7 @@ SRCP = $(addprefix $(SRC_DIR),$(SRC))
 
 OBJ = $(SRCP:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror -fPIE
+CFLAGS = -Wall -Wextra -Werror -fPIE -g
 
 LIB = ./Src/MyLib/mylib.a
 

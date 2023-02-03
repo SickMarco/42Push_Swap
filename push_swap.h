@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:40:58 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/02 17:28:06 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/03 16:09:27 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ typedef struct s_lis {
 	int					max_len;
 	int					max;
 }				t_lis;
+
+typedef struct s_move {
+	int					*arr;
+	int					len;
+}				t_move;
 
 //			LIST UTILS				//
 
