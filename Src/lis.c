@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:27:13 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/02 17:52:43 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/06 18:47:09 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	lis_alloc(t_stack **stack_a, t_lis **lis)
 	int	i;
 
 	i = 0;
-	lst_to_arr(stack_a, lis);
+	(*lis)->arr = lst_to_arr(stack_a);
+	(*lis)->size = ft_lstsizenum(*stack_a);
 	(*lis)->len = ft_calloc(sizeof(int), (*lis)->size + 1);
 	(*lis)->sub = ft_calloc(sizeof(int), (*lis)->size + 1);
 	while (i < (*lis)->size)

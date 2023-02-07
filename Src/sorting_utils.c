@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:58:03 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/02 17:28:55 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/05 16:24:00 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,24 @@ void	ft_printer(char	*mov)
 		ft_printf("%s\n", mov);
 }
 
-void	lst_to_arr(t_stack **stack_a, t_lis **lis)
+int	*lst_to_arr(t_stack **stack_a)
 {
 	t_stack	*stack;
+	int		*arr;
 	int		x;
+	int		size;
 
 	x = 0;
 	stack = (*stack_a);
-	(*lis)->size = ft_lstsizenum(*stack_a);
-	(*lis)->arr = ft_calloc(sizeof(int), (*lis)->size + 1);
+	size = ft_lstsizenum(*stack_a);
+	arr = ft_calloc(sizeof(int), size + 1);
 	while (stack)
 	{
-		(*lis)->arr[x] = stack->num;
+		arr[x] = stack->num;
 		x++;
 		stack = stack->next;
 	}
+	return (arr);
 }
 
 void	free_list(t_stack **lst)

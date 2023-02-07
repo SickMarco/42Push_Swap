@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:40:51 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/02 17:25:48 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/07 17:19:32 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	start_sorting(t_stack **stack_a, t_stack **stack_b, int ac)
 		minisort5(stack_a, stack_b);
 	else
 		bigsort(stack_a, stack_b);
-	ft_printlist(*stack_a, *stack_b);
 }
 
 int	main(int ac, char **av)

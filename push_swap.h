@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:40:58 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/03 16:09:27 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/06 16:34:02 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,25 @@ typedef struct s_move {
 	int					len;
 }				t_move;
 
+typedef struct s_arr {
+	int					*arr_a;
+	int					*arr_b;
+}				t_arr;
+
+typedef	struct s_selector {
+	int					best;
+	int					pos;
+}				t_selector;
+
+typedef	struct s_bigsort {
+	t_lis			*lis;
+	t_move			*a;
+	t_move			*b;
+	t_arr			*arr;
+	t_selector		*best;
+
+}				t_bigsort;
+
 //			LIST UTILS				//
 
 t_stack		*ft_lstnewnum(int num);
@@ -51,7 +70,7 @@ t_stack		*ft_lstlastnum(t_stack *lst);
 t_stack		*ft_copy_list(t_stack *stack);
 void		free_list(t_stack **list);
 int			ft_lstsizenum(t_stack *lst);
-void		lst_to_arr(t_stack **stack_a, t_lis **lis);
+int			*lst_to_arr(t_stack **stack_a);
 void		ft_printlist(t_stack *stack_a, t_stack *stack_b);
 
 // 				MOVES				//
