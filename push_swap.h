@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:40:58 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/06 16:34:02 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/08 17:52:08 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ typedef struct s_arr {
 	int					*arr_b;
 }				t_arr;
 
-typedef	struct s_selector {
+typedef struct s_selector {
 	int					best;
 	int					pos;
 }				t_selector;
 
-typedef	struct s_bigsort {
+typedef struct s_bigsort {
 	t_lis			*lis;
 	t_move			*a;
 	t_move			*b;
@@ -60,6 +60,11 @@ typedef	struct s_bigsort {
 	t_selector		*best;
 
 }				t_bigsort;
+
+typedef struct s_minmax {
+	int					min;
+	int					max;
+}				t_minmax;
 
 //			LIST UTILS				//
 
@@ -99,6 +104,16 @@ void		bigsort(t_stack **stack_a, t_stack **stack_b);
 void		get_lis(t_stack **stack_a, t_lis **lis);
 void		free_lis(t_lis **lis);
 void		push_lis(t_stack **stack_a, t_stack **stack_b, t_lis **lis);
+void		ft_allocator(t_bigsort **bs);
+int			ft_abs(int i);
+t_minmax	*intminmax(t_arr **arr);
+void		ft_selector(t_move **a, t_move **b, t_selector **sel);
+void		ft_mover(t_stack **stack_a, t_stack **stack_b, t_bigsort **bs);
+void		move_plusplus(t_stack **stack_a, t_stack **stack_b, int x, int y);
+void		move_plusminus(t_stack **stack_a, t_stack **stack_b, int x, int y);
+void		move_minusplus(t_stack **stack_a, t_stack **stack_b, int x, int y);
+void		move_minusminus(t_stack **stack_a, t_stack **stack_b, int x, int y);
+void		best_rotation(t_stack **stack_a);
 
 //				CHECKS				//
 
