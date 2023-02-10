@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:27:13 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/06 18:47:09 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/10 16:08:04 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ void	lis_alloc(t_stack **stack_a, t_lis **lis)
 	}
 }
 
-void	lis_finder(t_lis **lis)
+void	lis_finder(t_lis **lis, int size)
 {
 	int	i;
 
 	i = 0;
 	(*lis)->max_len = 0;
 	(*lis)->max = 0;
-	while ((*lis)->len[i])
+	while (i < size)
 	{
 		if ((*lis)->len[i] > (*lis)->max_len)
 		{
@@ -73,17 +73,17 @@ void	get_lis(t_stack **stack_a, t_lis **lis)
 		{
 			if ((*lis)->arr[j] < (*lis)->arr[i])
 			{
-				if ((*lis)->len[i] <= (*lis)->len[j] + 1)
+				if ((*lis)->len[i] < (*lis)->len[j] + 1)
 				{
 					(*lis)->len[i] = (*lis)->len[j] + 1;
 					(*lis)->sub[i] = j;
-				}	
+				}
 			}
 			j++;
 		}
 		i++;
 	}
-	lis_finder(lis);
+	lis_finder(lis, (*lis)->size);
 }
 
 void	push_lis(t_stack **stack_a, t_stack **stack_b, t_lis **lis)
@@ -97,7 +97,9 @@ void	push_lis(t_stack **stack_a, t_stack **stack_b, t_lis **lis)
 	i++;
 	while ((*stack_a)->num != (*lis)->lis[0])
 	{
-		if ((*stack_a)->num == (*lis)->lis[i])
+		if ((*stack_a)->num == 0)
+			pb(stack_a, stack_b);
+		else if ((*stack_a)->num == (*lis)->lis[i])
 		{
 			ra(stack_a);
 			i++;
@@ -105,10 +107,6 @@ void	push_lis(t_stack **stack_a, t_stack **stack_b, t_lis **lis)
 		else
 			pb (stack_a, stack_b);
 	}
-}
-
-void	free_lis(t_lis **lis)
-{
 	free((*lis)->arr);
 	free((*lis)->len);
 	free((*lis)->sub);

@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:46:53 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/08 18:00:04 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/10 15:54:50 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ void	ft_allocator(t_bigsort **bs)
 	(*bs)->best = ft_calloc(sizeof(t_selector), 1);
 }
 
-t_minmax	*intminmax(t_arr **arr)
+t_minmax	*intminmax(t_arr **arr, int len)
 {
 	int			x;
 	t_minmax	*find;
 
 	x = 0;
 	find = calloc(sizeof(t_minmax), 1);
-	find->max = 0;
+	find->max = INT_MIN;
 	find->min = INT_MAX;
-	while ((*arr)->arr_a[x])
+	while (x < len)
 	{
 		if (((*arr)->arr_a[x]) > find->max)
 			find->max = (*arr)->arr_a[x];
@@ -69,9 +69,17 @@ void	best_rotation(t_stack **stack_a)
 		while (ft_sorted(stack_a) != 1)
 			ra(stack_a);
 	}
-	else if ((pos >= len / 2))
+	else if (pos >= len / 2)
 	{
 		while (ft_sorted(stack_a) != 1)
 			rra(stack_a);
 	}
+}
+
+void	free_for_all(t_bigsort **bs)
+{
+	free((*bs)->arr);
+	free((*bs)->a);
+	free((*bs)->b);
+	free((*bs)->best);
 }

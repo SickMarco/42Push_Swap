@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:48:24 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/08 17:09:06 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/09 20:24:51 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,14 +85,14 @@ void	ft_selector1(t_move **a, t_move **b, t_selector **sel, int i)
 	}
 }
 
-void	ft_selector(t_move **a, t_move **b, t_selector **sel)
+void	ft_selector(t_move **a, t_move **b, t_selector **sel, int len)
 {
 	int	i;
 
 	i = 0;
 	(*sel)->best = INT_MAX;
 	(*sel)->pos = 0;
-	while ((*a)->arr[i] || (*b)->arr[i])
+	while (i < len)
 	{
 		if ((*sel)->best == 1 && (*sel)->pos == 0)
 			break ;

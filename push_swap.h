@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:40:58 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/08 17:52:08 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/10 16:06:14 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,19 @@ typedef struct s_lis {
 
 typedef struct s_move {
 	int					*arr;
-	int					len;
+	int					len_a;
+	int					len_b;
 }				t_move;
+
+typedef struct s_minmax {
+	int					min;
+	int					max;
+}				t_minmax;
 
 typedef struct s_arr {
 	int					*arr_a;
 	int					*arr_b;
+	t_minmax			*find;
 }				t_arr;
 
 typedef struct s_selector {
@@ -61,11 +68,6 @@ typedef struct s_bigsort {
 
 }				t_bigsort;
 
-typedef struct s_minmax {
-	int					min;
-	int					max;
-}				t_minmax;
-
 //			LIST UTILS				//
 
 t_stack		*ft_lstnewnum(int num);
@@ -76,7 +78,6 @@ t_stack		*ft_copy_list(t_stack *stack);
 void		free_list(t_stack **list);
 int			ft_lstsizenum(t_stack *lst);
 int			*lst_to_arr(t_stack **stack_a);
-void		ft_printlist(t_stack *stack_a, t_stack *stack_b);
 
 // 				MOVES				//
 
@@ -102,18 +103,18 @@ void		minisort4(t_stack **stack_a, t_stack **stack_b);
 void		minisort5(t_stack **stack_a, t_stack **stack_b);
 void		bigsort(t_stack **stack_a, t_stack **stack_b);
 void		get_lis(t_stack **stack_a, t_lis **lis);
-void		free_lis(t_lis **lis);
 void		push_lis(t_stack **stack_a, t_stack **stack_b, t_lis **lis);
 void		ft_allocator(t_bigsort **bs);
 int			ft_abs(int i);
-t_minmax	*intminmax(t_arr **arr);
-void		ft_selector(t_move **a, t_move **b, t_selector **sel);
+t_minmax	*intminmax(t_arr **arr, int len);
+void		ft_selector(t_move **a, t_move **b, t_selector **sel, int len);
 void		ft_mover(t_stack **stack_a, t_stack **stack_b, t_bigsort **bs);
 void		move_plusplus(t_stack **stack_a, t_stack **stack_b, int x, int y);
 void		move_plusminus(t_stack **stack_a, t_stack **stack_b, int x, int y);
 void		move_minusplus(t_stack **stack_a, t_stack **stack_b, int x, int y);
 void		move_minusminus(t_stack **stack_a, t_stack **stack_b, int x, int y);
 void		best_rotation(t_stack **stack_a);
+void		free_for_all(t_bigsort **bs);
 
 //				CHECKS				//
 
