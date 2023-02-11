@@ -6,11 +6,11 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:30:34 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/10 17:26:40 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/11 18:08:33 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Include/push_swap.h"
+#include "../Include/checker.h"
 
 int	ft_sorted(t_stack **stack_a)
 {

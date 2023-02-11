@@ -6,11 +6,11 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:06:11 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/29 17:22:18 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/10 17:27:03 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Include/push_swap.h"
 
 void	ra(t_stack **stack_a)
 {

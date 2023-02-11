@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting_move.c                                     :+:      :+:    :+:   */
+/*   sorting_move_b.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 19:20:51 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/10 17:27:00 by mbozzi           ###   ########.fr       */
+/*   Created: 2023/02/10 17:35:04 by mbozzi            #+#    #+#             */
+/*   Updated: 2023/02/11 20:09:29 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Include/push_swap.h"
 
-void	sa(t_stack **stack_a)
+void	do_sa(t_stack **stack_a)
 {
 	t_stack	*tmp1;
 	t_stack	*tmp2;
@@ -24,11 +24,10 @@ void	sa(t_stack **stack_a)
 		tmp2 = (*stack_a)->next;
 		(*stack_a)->next = tmp1;
 		tmp1->next = tmp2;
-		ft_printer("sa");
 	}
 }
 
-void	sb(t_stack **stack_b)
+void	do_sb(t_stack **stack_b)
 {
 	t_stack	*tmp1;
 	t_stack	*tmp2;
@@ -40,19 +39,16 @@ void	sb(t_stack **stack_b)
 		tmp2 = (*stack_b)->next;
 		(*stack_b)->next = tmp1;
 		tmp1->next = tmp2;
-		ft_printer("sb");
 	}
 }
 
-void	ss(t_stack **stack_a, t_stack **stack_b)
+void	do_ss(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_printer("ss");
-	sa(stack_a);
-	sb(stack_b);
-	ft_printer("OFF");
+	do_sa(stack_a);
+	do_sb(stack_b);
 }
 
-void	pb(t_stack **stack_a, t_stack **stack_b)
+void	do_pb(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
 
@@ -70,11 +66,10 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 			ft_lstadd_frontnum(stack_b, (*stack_a));
 			(*stack_a) = tmp;
 		}
-		ft_printer("pb");
 	}
 }
 
-void	pa(t_stack **stack_a, t_stack **stack_b)
+void	do_pa(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
 
@@ -92,6 +87,5 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 			ft_lstadd_frontnum(stack_a, (*stack_b));
 			(*stack_b) = tmp;
 		}
-		ft_printer("pa");
 	}
 }

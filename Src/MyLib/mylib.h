@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 17:18:32 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/17 16:26:38 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/11 18:04:34 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct s_stack {
+	int					num;
+	struct s_stack		*next;
+}				t_stack;
 
 int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
@@ -87,5 +92,10 @@ char			*get_next_line(int fd);
 char			*ft_strjoin2(char *s1, char *s2);
 int				ft_check_eol(char *buff);
 long int		ft_atoi_long(const char *str);
+t_stack			*ft_lstlastnum(t_stack *lst);
+t_stack			*ft_lstnewnum(int num);
+void			ft_lstadd_backnum(t_stack **lst, t_stack *new);
+void			ft_lstadd_frontnum(t_stack **lst, t_stack *new);
+int				ft_lstsizenum(t_stack *lst);
 
 #endif

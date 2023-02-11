@@ -6,11 +6,11 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:34:45 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/10 16:05:54 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/10 17:26:37 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Include/push_swap.h"
 
 int	check_a1(t_move **a, t_arr **arr, int i, int j)
 {

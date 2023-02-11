@@ -6,11 +6,11 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:27:13 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/10 16:08:04 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/10 17:26:42 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Include/push_swap.h"
 
 //		LONGEST INCREASING SUBSEQUENCE		//
 

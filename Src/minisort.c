@@ -6,11 +6,11 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 17:11:44 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/01/25 16:38:01 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/10 17:26:52 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Include/push_swap.h"
 
 t_sort	find_minmax(t_stack **stack)
 {

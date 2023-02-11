@@ -6,11 +6,11 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:00:40 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/08 18:52:35 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/11 18:13:48 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Include/push_swap.h"
 
 void	move_plusplus(t_stack **stack_a, t_stack **stack_b, int x, int y)
 {
@@ -94,4 +94,26 @@ void	move_minusminus(t_stack **stack_a, t_stack **stack_b, int x, int y)
 		}
 	}
 	pa(stack_a, stack_b);
+}
+
+void	ft_mover(t_stack **stack_a, t_stack **stack_b, t_bigsort **bs)
+{
+	int	x;
+	int	y;
+
+	x = (*bs)->a->arr[(*bs)->best->pos];
+	y = (*bs)->b->arr[(*bs)->best->pos];
+	if (*stack_b)
+	{
+		if (x >= 0 && y >= 0)
+			move_plusplus(stack_a, stack_b, x, y);
+		else if (x >= 0 && y <= 0)
+			move_plusminus(stack_a, stack_b, x, y);
+		else if (x <= 0 && y >= 0)
+			move_minusplus(stack_a, stack_b, x, y);
+		else if (x <= 0 && y <= 0)
+			move_minusminus(stack_a, stack_b, x, y);
+	}
+	free((*bs)->a->arr);
+	free((*bs)->b->arr);
 }

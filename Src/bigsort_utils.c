@@ -6,11 +6,11 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:46:53 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/10 15:54:50 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/10 17:50:52 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Include/push_swap.h"
 
 void	ft_allocator(t_bigsort **bs)
 {
@@ -66,12 +66,12 @@ void	best_rotation(t_stack **stack_a)
 	}
 	if (pos < len / 2)
 	{
-		while (ft_sorted(stack_a) != 1)
+		while ((*stack_a) != sort.min)
 			ra(stack_a);
 	}
 	else if (pos >= len / 2)
 	{
-		while (ft_sorted(stack_a) != 1)
+		while ((*stack_a) != sort.min)
 			rra(stack_a);
 	}
 }

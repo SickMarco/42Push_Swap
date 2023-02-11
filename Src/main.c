@@ -6,11 +6,11 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:40:51 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/10 14:48:31 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/10 17:26:49 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Include/push_swap.h"
 
 void	start_sorting(t_stack **stack_a, t_stack **stack_b, int ac)
 {
