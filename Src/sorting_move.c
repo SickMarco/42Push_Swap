@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 19:20:51 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/10 17:27:00 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/12 18:13:35 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
 
-	if (stack_a)
+	if (*stack_a)
 	{
 		if (!(*stack_b))
 		{
@@ -78,7 +78,7 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
 
-	if (stack_b)
+	if (*stack_b)
 	{
 		if (!(*stack_a))
 		{

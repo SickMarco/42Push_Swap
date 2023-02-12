@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:06:11 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/10 17:27:03 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/12 18:16:55 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,26 @@ void	ra(t_stack **stack_a)
 {
 	t_stack	*tmp;
 
-	tmp = (*stack_a)->next;
-	ft_lstadd_backnum(stack_a, (*stack_a));
-	(*stack_a) = tmp;
-	ft_printer("ra");
+	if (*stack_a && (*stack_a)->next != NULL)
+	{
+		tmp = (*stack_a)->next;
+		ft_lstadd_backnum(stack_a, (*stack_a));
+		(*stack_a) = tmp;
+		ft_printer("ra");
+	}
 }
 
 void	rb(t_stack **stack_b)
 {
 	t_stack	*tmp;
 
-	tmp = (*stack_b)->next;
-	ft_lstadd_backnum(stack_b, (*stack_b));
-	(*stack_b) = tmp;
-	ft_printer("rb");
+	if (*stack_b && (*stack_b)->next != NULL)
+	{
+		tmp = (*stack_b)->next;
+		ft_lstadd_backnum(stack_b, (*stack_b));
+		(*stack_b) = tmp;
+		ft_printer("rb");
+	}
 }
 
 void	rr(t_stack **stack_a, t_stack **stack_b)
@@ -45,14 +51,17 @@ void	rra(t_stack **stack_a)
 	t_stack	*head;
 	t_stack	*last;
 
-	head = (*stack_a);
-	last = ft_lstlastnum((*stack_a));
-	while ((*stack_a)->next != last)
-		(*stack_a) = (*stack_a)->next;
-	(*stack_a)->next = NULL;
-	last->next = head;
-	(*stack_a) = last;
-	ft_printer("rra");
+	if (*stack_a && (*stack_a)->next != NULL)
+	{
+		head = (*stack_a);
+		last = ft_lstlastnum((*stack_a));
+		while ((*stack_a)->next != last)
+			(*stack_a) = (*stack_a)->next;
+		(*stack_a)->next = NULL;
+		last->next = head;
+		(*stack_a) = last;
+		ft_printer("rra");
+	}
 }
 
 void	rrb(t_stack **stack_b)
@@ -60,12 +69,15 @@ void	rrb(t_stack **stack_b)
 	t_stack	*head;
 	t_stack	*last;
 
-	head = (*stack_b);
-	last = ft_lstlastnum((*stack_b));
-	while ((*stack_b)->next != last)
-		(*stack_b) = (*stack_b)->next;
-	(*stack_b)->next = NULL;
-	last->next = head;
-	(*stack_b) = last;
-	ft_printer("rrb");
+	if (*stack_b && (*stack_b)->next != NULL)
+	{
+		head = (*stack_b);
+		last = ft_lstlastnum((*stack_b));
+		while ((*stack_b)->next != last)
+			(*stack_b) = (*stack_b)->next;
+		(*stack_b)->next = NULL;
+		last->next = head;
+		(*stack_b) = last;
+		ft_printer("rrb");
+	}
 }

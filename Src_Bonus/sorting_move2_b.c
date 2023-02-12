@@ -6,7 +6,7 @@
 /*   By: mbozzi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 17:36:37 by mbozzi            #+#    #+#             */
-/*   Updated: 2023/02/11 20:09:12 by mbozzi           ###   ########.fr       */
+/*   Updated: 2023/02/12 17:03:22 by mbozzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	do_ra(t_stack **stack_a)
 {
 	t_stack	*tmp;
 
-	if (*stack_a)
+	if (*stack_a && (*stack_a)->next != NULL)
 	{
 		tmp = (*stack_a)->next;
 		ft_lstadd_backnum(stack_a, (*stack_a));
@@ -28,7 +28,7 @@ void	do_rb(t_stack **stack_b)
 {
 	t_stack	*tmp;
 
-	if (*stack_b)
+	if (*stack_b && (*stack_b)->next != NULL)
 	{
 		tmp = (*stack_b)->next;
 		ft_lstadd_backnum(stack_b, (*stack_b));
@@ -47,7 +47,7 @@ void	do_rra(t_stack **stack_a)
 	t_stack	*head;
 	t_stack	*last;
 
-	if (*stack_a)
+	if (*stack_a && (*stack_a)->next != NULL)
 	{
 		head = (*stack_a);
 		last = ft_lstlastnum((*stack_a));
@@ -64,7 +64,7 @@ void	do_rrb(t_stack **stack_b)
 	t_stack	*head;
 	t_stack	*last;
 
-	if (*stack_b)
+	if (*stack_b && (*stack_b)->next != NULL)
 	{
 		head = (*stack_b);
 		last = ft_lstlastnum((*stack_b));
